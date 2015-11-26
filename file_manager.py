@@ -13,9 +13,17 @@ def get_files():
 # getting all txt files in download folder.
 
 def get_txt_files(download_folder_files):
+    txt_files = []
     for file in download_folder_files:
         if file[-4:] == ".txt":
-            print(file)
+            txt_files.append(file)
+    return txt_files
 
 
-get_txt_files(get_files())
+# print (get_txt_files(get_files()))
+
+def move_txt_files(txt_files):
+    for file in txt_files:
+        os.rename("C:/Users/opeyemi/Downloads/%s" % file, "C:/Users/opeyemi/Documents/%s" % file)
+
+move_txt_files(get_txt_files(get_files()))
