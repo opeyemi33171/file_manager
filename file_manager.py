@@ -15,7 +15,7 @@ def get_files():
 def get_txt_files(download_folder_files):
     txt_files = []
     for file in download_folder_files:
-        if file[-4:] == ".txt":
+        if file[-4:] == ".txt" or file[-4:] == ".pdf":
             txt_files.append(file)
     return txt_files
 
